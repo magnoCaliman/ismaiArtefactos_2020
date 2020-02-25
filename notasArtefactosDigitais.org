@@ -21,15 +21,15 @@
   - https://www.youtube.com/watch?v=FOfEsUTZRK0
 
 ** Arduino
-https://www.arduino.cc/
-http://www.instructables.com/id/Arduino-Line-Follower-Robot-1/
-http://www.instructables.com/id/Use-an-Accelerometer-and-Gyroscope-with-Arduino/
-http://www.instructables.com/id/coin-slot-detector/
-https://www.youtube.com/watch?v=Z86V_ICUCD4
-https://www.youtube.com/watch?v=Nqk_nWAjBus
-http://www.instructables.com/id/Twitter-Controlled-Pet-Feeder/
-http://www.instructables.com/id/Singing-plant-Make-your-plant-sing-with-Arduino-/
-https://www.youtube.com/watch?v=JCiXV6b7N0A&list=UU4u0V-G5KTeWF5hnubp-lrA&index=9&feature=plcp
+- https://www.arduino.cc/
+- http://www.instructables.com/id/Arduino-Line-Follower-Robot-1/
+- http://www.instructables.com/id/Use-an-Accelerometer-and-Gyroscope-with-Arduino/
+- http://www.instructables.com/id/coin-slot-detector/
+- https://www.youtube.com/watch?v=Z86V_ICUCD4
+- https://www.youtube.com/watch?v=Nqk_nWAjBus
+- http://www.instructables.com/id/Twitter-Controlled-Pet-Feeder/
+- http://www.instructables.com/id/Singing-plant-Make-your-plant-sing-with-Arduino-/
+- https://www.youtube.com/watch?v=JCiXV6b7N0A&list=UU4u0V-G5KTeWF5hnubp-lrA&index=9&feature=plcp
 
 ** Links extras vistos em sala
 - Suicide shower
