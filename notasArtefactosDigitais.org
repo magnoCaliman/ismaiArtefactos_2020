@@ -1,0 +1,47 @@
+* AULA 01 - 18/FEV
+
+** Hardware Hacking / Circuit Bending
+- Laying of hands
+  - https://www.youtube.com/watch?v=-l5EhwsXUGg
+
+- Reed Ghazala, the Father of Circuit Bending
+  - https://www.youtube.com/watch?v=KHDL9iGxDPM
+- Intro to Circuit Bending
+  - https://www.youtube.com/watch?v=kJfTdD_5XyE
+- Circuit Bent Trumpet
+  - https://www.youtube.com/watch?v=3LtOalTAVGw
+
+** Manufatura de dispositivos
+- Microfones indutores
+  - https://www.youtube.com/watch?v=4T7qkYY7LZM
+- Christina Kubisch - Electrical Walks
+  - https://vimeo.com/54846163
+
+- Microfones piezos
+  - https://www.youtube.com/watch?v=FOfEsUTZRK0
+
+** Arduino
+https://www.arduino.cc/
+http://www.instructables.com/id/Arduino-Line-Follower-Robot-1/
+http://www.instructables.com/id/Use-an-Accelerometer-and-Gyroscope-with-Arduino/
+http://www.instructables.com/id/coin-slot-detector/
+https://www.youtube.com/watch?v=Z86V_ICUCD4
+https://www.youtube.com/watch?v=Nqk_nWAjBus
+http://www.instructables.com/id/Twitter-Controlled-Pet-Feeder/
+http://www.instructables.com/id/Singing-plant-Make-your-plant-sing-with-Arduino-/
+https://www.youtube.com/watch?v=JCiXV6b7N0A&list=UU4u0V-G5KTeWF5hnubp-lrA&index=9&feature=plcp
+
+** Links extras vistos em sala
+- Suicide shower
+  - https://duckduckgo.com/?q=suicide+shower&iax=images&ia=images
+- Protoboard
+  - https://duckduckgo.com/?q=protoboar+populated&iax=images&ia=images
+- Chromium
+  - https://www.chromium.org/
+- Gameduino
+  - https://duckduckgo.com/?q=gameduino&t=ffab&iax=images&ia=images
+- Arduinos no AliExpress
+  - https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20200218113532&SearchText=arduino
+- Raspberry Pie
+  - https://www.raspberrypi.org/
+  - https://duckduckgo.com/?q=raspberry+pie+computer&t=ffab&iar=images&iax=images&ia=images&iai=https%3A%2F%2Fwww.raspberrypi.org%2Fmagpi%2Fwp-content%2Fuploads%2F2017%2F04%2FRaspberry-Pi-3.jpg
