@@ -45,3 +45,23 @@
 - Raspberry Pie
   - https://www.raspberrypi.org/
   - https://duckduckgo.com/?q=raspberry+pie+computer&t=ffab&iar=images&iax=images&ia=images&iai=https%3A%2F%2Fwww.raspberrypi.org%2Fmagpi%2Fwp-content%2Fuploads%2F2017%2F04%2FRaspberry-Pi-3.jpg
+
+    
+* AULA 02 - 03/FEV
+
+Capítulos 11, 12 e 13 em /COLLINS, N - Handmade Electronic Music/
+
+- Circuit Bending
+  - https://www.youtube.com/watch?v=TjbGSgCopNk
+
+- Laying of Hands
+  - https://www.youtube.com/watch?v=-l5EhwsXUGg
+
+** Links extras vistos em aula
+- 10.000 volts wood burning
+  - https://www.youtube.com/watch?v=PFMo5aicurc
+
+- Van de Graff Generator
+  - https://www.youtube.com/watch?v=3Ptu07enIsY
+
+
