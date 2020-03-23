@@ -142,7 +142,7 @@ void loop()
 
 /Rocha, H - Introdução à Eletrônica Para Artistas - p.31/
 
-Ex.2 - Protoboard - https://www.tinkercad.com/things/ktwF407CHEB 
+- Ex.2 - Protoboard - https://www.tinkercad.com/things/ktwF407CHEB 
 #+BEGIN_SRC c
 void setup()
 {
@@ -158,9 +158,11 @@ void loop()
 }
 #+END_SRC
 
+---
+
 /Banzi, M - Make - Getting started with Arduino - p.42/
 
-Ex.3 - Ground compartilhado -  https://www.tinkercad.com/things/7jYMC8PHA21 
+- Ex.3 - Ground compartilhado -  https://www.tinkercad.com/things/7jYMC8PHA21 
 #+BEGIN_SRC c
 void setup()
 {
@@ -177,5 +179,63 @@ void loop()
 }
 #+END_SRC
 
-/Experimento 1: constrir um circuito (usando a protoboard) onde um ou mais botões são usados para ligar/desligar componentes que já vimos: leds, motores ou colunas (no tinkercad, "piezos")./
+- /Experimento 1: constrir um circuito (usando a protoboard) onde um ou mais botões são usados para ligar/desligar componentes que já vimos: leds, motores ou colunas (no tinkercad, "piezos")./
+- Possível solução:  https://www.tinkercad.com/things/5b7xva4baRr 
+- Pergunta: nessa solução, há diferença conectar o positivo do motor /antes/ do botão?
 
+* FUNÇÕES & ARGUMENTOS
+
+- Funções vistas até o momento: ~pinMode()~, ~digitalWrite()~ e ~delay()~
+
+- Como descobrir quais os argumentos dessas funções? RTFM: https://www.arduino.cc/reference/en/
+
+** ~tone()~
+
+- Documentação: https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/
+
+- Ex.4 - Tone -  https://www.tinkercad.com/things/goaXcc7SD0w 
+#+BEGIN_SRC c
+void setup()
+{
+  pinMode(5, OUTPUT);
+}
+
+void loop()
+{
+  tone(5, 100);
+}
+#+END_SRC
+
+- Ex.5 - Tone (3 argumentos) -  https://www.tinkercad.com/things/l9MI9pnko2L
+#+BEGIN_SRC c
+void setup()
+{
+  pinMode(5, OUTPUT);
+}
+
+void loop()
+{
+  tone(5, 100, 250);
+  delay(1000); //agora com três argumentos
+}
+#+END_SRC
+
+- Ex.6 - Tone (sequenciador) -  https://www.tinkercad.com/things/ism9S9i4ulI
+#+BEGIN_SRC c
+void setup()
+{
+  pinMode(5, OUTPUT);
+}
+
+void loop()
+{
+  tone(5, 100, 90);
+  delay(150);
+  tone(5, 200, 90);
+  delay(150);
+  tone(5, 300, 90);
+  delay(150);
+  tone(5, 400, 90);
+  delay(150);
+}
+#+END_SRC
