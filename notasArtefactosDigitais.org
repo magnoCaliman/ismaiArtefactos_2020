@@ -118,8 +118,6 @@ Capítulo 4 e 5 em /COLLINS, N - Handmade Electronic Music/
 - Touchless Hand Sanitizer Dispenser
   - https://www.facebook.com/watch/?v=218900009494708
 
-protoboard, funcoes, argumentos, documentacao, random, tone
-
 ** Blink
 
 Ex.1 - Blink - https://www.tinkercad.com/things/3jdGRZLhdex 
@@ -234,3 +232,164 @@ void loop()
    delay(150);
  }
  #+END_SRC
+
+
+** Links extras vistos em aula:
+- Exemplo de sequenciador: abertura Stranger Things
+  - https://www.youtube.com/watch?v=-RcPZdihrp4
+
+
+* AULA 06 - 31/MAR
+
+** ~random()~
+
+- Documentação: https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
+
+- Ex.6 -  blinkRandom - https://www.tinkercad.com/things/6MLM7S6X0Tb 
+#+BEGIN_SRC c
+void setup()
+{
+  pinMode(7, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(7, HIGH);
+  delay(random(100, 1000));
+  digitalWrite(7, LOW);
+  delay(500);
+}
+#+END_SRC
+
+- Ex.7 - toneRandom -  https://www.tinkercad.com/things/b02258ngUu4 
+#+BEGIN_SRC c
+void setup()
+{
+  pinMode(5, OUTPUT);
+}
+
+void loop()
+{
+  tone(5, random(100, 800));
+  delay(200);
+}
+#+END_SRC
+
+- Pergunta: é randômico de verdade? O que é o "pseudo-random" mencionado na documentação?
+
+*** Funções como argumento de outras funções & Modularidade
+#+BEGIN_SRC c
+void setup()
+{
+  pinMode(5, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(5, HIGH);
+  delay(distanciaEntrePessoas()); // isso poderia existir!
+  digitalWrite(5, LOW);
+  delay(distanciaEntrePessoas());
+}
+
+void distanciaEntrePessoas()
+{
+  // muitas linhas de código!
+}
+#+END_SRC
+
+- Ou algo como: https://blog.arduino.cc/2020/03/10/this-pair-of-arduino-glasses-stops-you-from-touching-your-face/
+
+** Variáveis
+
+- /Experimento 2: reproduzir o comportamento desse circuito:  https://www.tinkercad.com/things/djHUEO9MFJB/
+
+*** O que é / para que serve?
+
+- Resumão: https://www.arduino.cc/en/Tutorial/Variables
+
+- Ex.8 - Blink com variável -  https://www.tinkercad.com/things/1c6hEqOfAHP 
+#+BEGIN_SRC c
+int pinoLed = 7;
+int tempoDelay = 500;
+  
+void setup()
+{
+  pinMode(pinoLed, OUTPUT);     
+}
+
+void loop()
+{
+  digitalWrite(pinoLed, HIGH);  
+  delay(tempoDelay);             
+  digitalWrite(pinoLed, LOW);   
+  delay(tempoDelay);             
+}
+#+END_SRC
+
+- ~int x = 10~ -> Dissecando as 4 partes do uso de uma variável:
+  - ~int~ -> tipo de dado (data type)
+  - ~x~ -> nome
+  - ~=~ -> declara um valor
+  - ~10~ -> valor
+
+- Ex.9 - Tone sequenciador com variável -  https://www.tinkercad.com/things/jIMzNe9eevD 
+  - Código é para o computador rodar, e para o progamador ler!
+#+BEGIN_SRC c
+void setup()
+{
+  pinMode(5, OUTPUT);
+}
+
+void loop()
+{
+  tone(5, 100, 90);
+  delay(150);
+  
+  tone(5, 200, 90);
+  delay(150);
+  
+  tone(5, 300, 90);
+  delay(150);
+  
+  tone(5, 400, 90);
+  delay(150);
+}
+
+// onde estão as redundâncias nesse código
+// que podem ser substituídas por variáveis?
+#+END_SRC
+
+- Ex.10 - Variando variáveis -  https://www.tinkercad.com/things/iMLDtoDSjwc 
+#+BEGIN_SRC c
+int pinoLed_R = 5;
+int pinoLed_G = 6;
+int pinoLed_B = 7;
+int tempoDelay = 500;
+
+void setup()
+{
+  pinMode(pinoLed_R, OUTPUT);
+  pinMode(pinoLed_G, OUTPUT);
+  pinMode(pinoLed_B, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(pinoLed_R, HIGH);
+  delay(tempoDelay);
+  digitalWrite(pinoLed_G, HIGH);
+  delay(tempoDelay * 2);
+  digitalWrite(pinoLed_B, HIGH);
+  delay(tempoDelay * 0.5); // multiplicar por 0.5 é o mesmo que dividir por 2 
+  
+  digitalWrite(pinoLed_R, LOW);
+  digitalWrite(pinoLed_G, LOW);
+  digitalWrite(pinoLed_B, LOW);
+  delay(tempoDelay);
+  
+  tempoDelay = random(500, 2000);
+}
+#+END_SRC
+
+- TPC: resolver o experimento 2 & criar algum circuito usando random() e variáveis
