@@ -308,7 +308,7 @@ void distanciaEntrePessoas()
 
 - Resumão: https://www.arduino.cc/en/Tutorial/Variables
 
-- ~int x = 10~ -> Dissecando as 4 partes do uso de uma variável:
+- ~int x = 10~ -> Dissecando as 4 partes do uso de uma variável *no Arduino*:
   - ~int~ -> tipo de dado (data type)
   - ~x~ -> nome
   - ~=~ -> atribuição de valor
