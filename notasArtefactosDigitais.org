@@ -308,6 +308,12 @@ void distanciaEntrePessoas()
 
 - Resumão: https://www.arduino.cc/en/Tutorial/Variables
 
+- ~int x = 10~ -> Dissecando as 4 partes do uso de uma variável:
+  - ~int~ -> tipo de dado (data type)
+  - ~x~ -> nome
+  - ~=~ -> atribuição de valor
+  - ~10~ -> valor
+
 - Ex.8 - Blink com variável -  https://www.tinkercad.com/things/1c6hEqOfAHP 
 #+BEGIN_SRC c
 int pinoLed = 7;
@@ -327,14 +333,8 @@ void loop()
 }
 #+END_SRC
 
-- ~int x = 10~ -> Dissecando as 4 partes do uso de uma variável:
-  - ~int~ -> tipo de dado (data type)
-  - ~x~ -> nome
-  - ~=~ -> declara um valor
-  - ~10~ -> valor
-
 - Ex.9 - Tone sequenciador com variável -  https://www.tinkercad.com/things/jIMzNe9eevD 
-  - Código é para o computador rodar, e para o progamador ler!
+  - Código é para o computador rodar, mas para o progamador ler!
 #+BEGIN_SRC c
 void setup()
 {
@@ -392,4 +392,4 @@ void loop()
 }
 #+END_SRC
 
-- TPC: resolver o experimento 2 & criar algum circuito usando random() e variáveis
+- TPC: resolver o experimento 2 & criar algum circuito usando ~random()~ e variáveis
