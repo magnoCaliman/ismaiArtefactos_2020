@@ -402,7 +402,6 @@ void loop()
 ** Comunicação serial
 - Partindo do Exemplo 10, temos ~tempoDelay = random(500, 2000);~
 - Como podemos ver esse valor?
-\\
 - Ex.11 - Serial - https://www.tinkercad.com/things/0z6Eyd4p9ga 
 #+BEGIN_SRC c
 int valorRandomico;
@@ -478,8 +477,8 @@ void loop()
 #+BEGIN_SRC c
 if (teste)
 {
-  bloco de código que é avaliado se 
-  a condição do teste for verdadeira
+  //bloco de código que é avaliado se 
+  //a condição do teste for verdadeira
 }
 #+END_SRC
 
@@ -510,7 +509,6 @@ void loop()
 //  }
   
   Serial.println(estadoBotao);
-  
   delay(50);
 }
 #+END_SRC
@@ -560,6 +558,6 @@ void loop()
 - Usando piezos e botões, crie um pequeno piano, onde cada botão produz um som diferente.
 
 - Crie algum circuito livre utilizando condicionais ~if()~ e a leitura de pinos digitais.
-
+  
 *** Desafio extra:
-- Crie um circuito onde ao apertar um botão um LED acenda /e permaneça acesso/, e ao apertar de novo, o LED apague.
+- Crie um circuito onde ao apertar um botão um LED acende /e permanece acesso/, e ao apertar de novo, o LED apague.
