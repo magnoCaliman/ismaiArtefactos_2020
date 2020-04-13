@@ -245,7 +245,7 @@ void loop()
 
 - Documentação: https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
 
-- Ex.6 -  blinkRandom - https://www.tinkercad.com/things/6MLM7S6X0Tb 
+- Ex.6 - blinkRandom - https://www.tinkercad.com/things/6MLM7S6X0Tb 
 #+BEGIN_SRC c
 void setup()
 {
@@ -261,7 +261,7 @@ void loop()
 }
 #+END_SRC
 
-- Ex.7 - toneRandom -  https://www.tinkercad.com/things/b02258ngUu4 
+- Ex.7 - toneRandom - https://www.tinkercad.com/things/b02258ngUu4 
 #+BEGIN_SRC c
 void setup()
 {
@@ -277,7 +277,7 @@ void loop()
 
 - Pergunta: é randômico de verdade? O que é o "pseudo-random" mencionado na documentação?
 
-*** Funções como argumento de outras funções & Modularidade
+** Funções como argumento de outras funções & Modularidade
 #+BEGIN_SRC c
 void setup()
 {
@@ -308,7 +308,7 @@ void distanciaEntrePessoas()
 
 - Resumão: https://www.arduino.cc/en/Tutorial/Variables
 
-- ~int x = 10~ -> Dissecando as 4 partes do uso de uma variável *no Arduino*:
+- ~int x = 10~ -> Dissecando as 4 partes do uso de uma variável *no Arduino*n:
   - ~int~ -> tipo de dado (data type)
   - ~x~ -> nome
   - ~=~ -> atribuição de valor
@@ -392,4 +392,174 @@ void loop()
 }
 #+END_SRC
 
-- TPC: resolver o experimento 2 & criar algum circuito usando ~random()~ e variáveis
+** TPC
+- Resolvea o Experimento
+- Crie algum circuito livre usando ~random()~ e variáveis
+
+
+* AULA 07 - 14/ABR
+
+** Comunicação serial
+- Partindo do exemplo 10, temos ~tempoDelay = random(500, 2000);~
+- Como fazer para ver esse valor?
+
+- Ex.11 - Serial - https://www.tinkercad.com/things/0z6Eyd4p9ga 
+#+BEGIN_SRC c
+int valorRandomico;
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  valorRandomico = random(100, 500);
+  
+  //Serial.print("O numero sorteado foi: ");
+  Serial.println(valorRandomico);
+  
+  delay(1000);
+}
+#+END_SRC
+
+- Atenção para a sintaxe!
+- "Dot notation" -> ~colecao.funcao(argumento)~
+- Nem sempre é assim. Outras linguagens vão permitir coisas como ~[1, 2, 3, 4, 5].choose~. Mas não o Arduino.
+
+** ~digitalRead()~
+- Documentação: https://www.arduino.cc/reference/en/language/functions/digital-io/digitalread/
+
+- Ex.12 - digitalRead -  https://www.tinkercad.com/things/a7Pzmrh2WYs 
+#+BEGIN_SRC c
+void setup()
+{
+  pinMode(5, INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  Serial.println(digitalRead(5));
+  
+  delay(1000);
+}
+#+END_SRC
+
+- /Experimento 3: imprima no monitor serial a leitura de dois pinos, onde um está conectado à 5V, e outro não está conectado à nada. Qual a diferença de leitura?/ 
+  - Possível solução:  https://www.tinkercad.com/things/4nBS2eLmEqt 
+
+- Ex.13 - leituraBotao -  https://www.tinkercad.com/things/bMUTLstkbb4 
+#+BEGIN_SRC c
+int pinoBotao = 2;
+int estadoBotao;
+
+void setup()
+{
+  pinMode(pinoBotao, INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  estadoBotao = digitalRead(pinoBotao);
+  
+  Serial.println(estadoBotao);
+  delay(100);
+}
+#+END_SRC
+
+- Pergunta: qual a diferença de circuito entre o botão nesse exemplo, e os usos que vinhamos fazendo até agora?
+
+** ~if()~
+
+- Testa uma condição /booleana/ e /condiciona/ a execução de um bloco de código à esse teste.
+
+#+BEGIN_SRC c
+if (teste)
+{
+  bloco de código que é avaliado se 
+  a condição do teste for verdadeira
+}
+#+END_SRC
+
+- Ex.14 - ligaLed_botao -  https://www.tinkercad.com/things/5jpQ2PtByJq 
+#+BEGIN_SRC c
+int pinoBotao = 2;
+int pinoLed = 13;
+int estadoBotao;
+
+void setup()
+{
+  pinMode(pinoBotao, INPUT);
+  pinMode(pinoLed, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  estadoBotao = digitalRead(pinoBotao);
+  
+  if (estadoBotao == 1)
+  {
+    digitalWrite(pinoLed, HIGH);
+  }
+//  else
+//  {
+//  	digitalWrite(pinoLed, LOW);
+//  }
+  
+  Serial.println(estadoBotao);
+  
+  delay(50);
+}
+#+END_SRC
+
+- Lembrando os operadores de comparação:
+#+BEGIN_SRC c
+x == y (x is equal to y)
+x != y (x is not equal to y)
+x <  y (x is less than y)
+x >  y (x is greater than y)
+x <= y (x is less than or equal to y)
+x >= y (x is greater than or equal to y)
+#+END_SRC
+Referência: https://www.arduino.cc/reference/en/language/structure/control-structure/if/
+
+- Ex. 15 - Contador -  https://www.tinkercad.com/things/4kdTHqHBg7d 
+#+BEGIN_SRC c
+int pinoBotao = 2;
+int contador = 0;
+int estadoBotao;
+
+void setup()
+{
+  pinMode(pinoBotao, INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  estadoBotao = digitalRead(pinoBotao);
+  
+  if (estadoBotao == HIGH)
+  {
+    contador = contador + 1;
+  }
+  
+  Serial.println(contador);
+  
+  delay(100);
+}
+#+END_SRC
+
+** TPC
+- Crie um circuito onde um LED possui um timer de desligamento: ao apertar um botão o LED acende, e após 3 segundos, desliga.
+  - Variação possível: crie um semáforo: 3 LEDs (vermelho, amarelo e verde) controlados por um único botão.
+
+- Usando piezos e botões, crie um pequeno piano, onde cada botão produz um som diferente.
+
+- Crie algum circuito livre utilizando condicionais ~if()~ e a leitura de pinos digitais.
+
+*** Desafio extra:
+- Crie um circuito onde ao apertar um botão um LED acenda /e permaneça acesso/, e ao apertar de novo, o LED apague.
