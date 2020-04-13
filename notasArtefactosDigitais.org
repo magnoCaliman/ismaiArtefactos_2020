@@ -402,7 +402,7 @@ void loop()
 ** Comunicação serial
 - Partindo do Exemplo 10, temos ~tempoDelay = random(500, 2000);~
 - Como podemos ver esse valor?
-//
+\\
 - Ex.11 - Serial - https://www.tinkercad.com/things/0z6Eyd4p9ga 
 #+BEGIN_SRC c
 int valorRandomico;
