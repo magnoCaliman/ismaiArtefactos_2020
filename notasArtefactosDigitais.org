@@ -393,7 +393,7 @@ void loop()
 #+END_SRC
 
 ** TPC
-- Resolva o Experimento
+- Resolva o Experimento 2
 - Crie algum circuito livre usando ~random()~ e variáveis
 
 
@@ -403,6 +403,7 @@ void loop()
 - Partindo do Exemplo 10, temos ~tempoDelay = random(500, 2000);~
 - Como podemos ver esse valor?
 - Ex.11 - Serial - https://www.tinkercad.com/things/0z6Eyd4p9ga 
+- Documentação - https://www.arduino.cc/reference/en/language/functions/communication/serial/
 #+BEGIN_SRC c
 int valorRandomico;
 
@@ -423,7 +424,7 @@ void loop()
 #+END_SRC
 
 - Atenção para a sintaxe!
-- "Dot notation" -> ~colecao.funcao(argumento)~
+- "Dot notation" -> ~Colecao.funcao(argumento)~
 - Nem sempre é assim. Outras linguagens vão permitir coisas como ~[1, 2, 3, 4, 5].choose~. Mas não o Arduino.
 
 ** ~digitalRead()~
@@ -472,7 +473,7 @@ void loop()
 
 ** ~if()~
 
-- Testa uma condição /booleana/ e /condiciona/ a execução de um bloco de código à esse teste.
+- Faz um teste /booleano/ e /condiciona/ a execução de um bloco de código à esse teste.
 
 #+BEGIN_SRC c
 if (teste)
