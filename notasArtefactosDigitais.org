@@ -600,6 +600,7 @@ void loop()
 
 - ~millis()~ é um contador de tempo, começa contagem do zero, portanto nunca tem valores negativos. Usa-se então um /qualificador/ ao início da declaração da variável para especificar que aquela variável agora só comporta valores positivos. ~unsigned~ = "sem sinal". (https://www.arduino.cc/reference/en/language/variables/data-types/unsignedlong/)
   - Observe: agora a variável ~unsigned long tempo~ pode comportar valores entre 0 e 4.294.967.295. Seu tamanho é o mesmo de antes, o /âmbito/ é que foi transposto para o universo dos números positivos.
+
 \\
 - Ex.17 - blink_if - https://www.tinkercad.com/things/07l1cmCVVjO
 #+BEGIN_SRC c
@@ -638,4 +639,5 @@ void loop()
 - Piscagem de um LED (como Ex.1 - Blink), mas sem valores /hardcoded/ ~HIGH~ e ~LOW~ em duas chamadas para a função ~digitalWrite()~.
 - Agora cria-se lógica onde através da variável ~estadoLed~ monitora-se o estado /booleano/ do Led ("está acesso ou apagado?").
 
+\\
 - Ex.18 - blinkSemDelay -  https://www.tinkercad.com/things/3RZ8sFVXgCy
