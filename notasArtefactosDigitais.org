@@ -571,6 +571,7 @@ void loop()
 - Função que retorna um valor, em /millisegundos/, que marca a quanto tempo o programa está sendo executado no Arduino.
 - Lembrando: 1000 millisegundos == 1 segundo.
 
+- Ex.16 - millis() - https://www.tinkercad.com/things/0acHit8WMhY 
 #+BEGIN_SRC c
 //int tempo;
 unsigned long tempo;
@@ -592,10 +593,49 @@ void loop()
 
 - Variáveis do tipo ~int~ tem um limite máximo de tamanho. A "caixa" só consegue guardar números entre -32.768 e 32.767. (https://www.arduino.cc/reference/en/language/variables/data-types/int/)
 - Se usamos uma variável do tipo ~int~ para armazenar valor de ~millis()~, em pouco mais de 30 segundos a variável chega em seu valor máximo, e temos um problema de /stack overflow/: o valor dentro da variável "transborda" depois de 32.767, e pula para o valor mínimo.
-  - No Ex.15, experimente trocar o tipo da variável ~tempo~ e veja veja o monitor serial.
+  - No Ex.16, experimente trocar o tipo da variável ~tempo~ e observe o monitor serial.
 
 - Como evitar:
   - Usar uma "caixa" que comporta valores maiores. Mudar tipo da variável ~tempo~ para ~long~, capaz de armazenar valores entre -2.147.483.648 e 2.147.483.647 (https://www.arduino.cc/reference/en/language/variables/data-types/long/)
 
-- ~millis()~ é um contador de tempo, começa contagem do zero, portanto nunca tem valores negativos. Usa-se então um /qualificador/ ao início da declaração da variável para especificar que aquela variável agora só comporta valores positivos. ~unsigned~ = "sem sinal".
+- ~millis()~ é um contador de tempo, começa contagem do zero, portanto nunca tem valores negativos. Usa-se então um /qualificador/ ao início da declaração da variável para especificar que aquela variável agora só comporta valores positivos. ~unsigned~ = "sem sinal". (https://www.arduino.cc/reference/en/language/variables/data-types/unsignedlong/)
   - Observe: agora a variável ~unsigned long tempo~ pode comportar valores entre 0 e 4.294.967.295. Seu tamanho é o mesmo de antes, o /âmbito/ é que foi transposto para o universo dos números positivos.
+
+- Ex.17 - blink_if - https://www.tinkercad.com/things/07l1cmCVVjO
+#+BEGIN_SRC c
+int pinoLed = 13;
+int estadoLed = HIGH;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(pinoLed, OUTPUT);
+}
+
+void loop()
+{
+  Serial.print("estadoLed antes do if: ");
+  Serial.println(estadoLed);
+  
+  digitalWrite(pinoLed, estadoLed);
+  	
+   if (estadoLed == HIGH)
+   {
+     estadoLed = LOW;
+   }
+   else
+   {
+     estadoLed = HIGH;
+   }
+  
+   Serial.print("estadoLed depois do if: ");
+   Serial.println(estadoLed);
+  	
+   delay(2000);
+}
+#+END_SRC
+
+- Piscagem de um LED (como Ex.1 - Blink), mas sem valores /hardcoded/ ~HIGH~ e ~LOW~ em duas chamadas para a função ~digitalWrite()~.
+- Agora cria-se lógica onde através da variável ~estadoLed~ monitora-se o estado /booleano/ do Led ("está acesso ou apagado?").
+
+- Ex.18 - blinkSemDelay -  https://www.tinkercad.com/things/3RZ8sFVXgCy
