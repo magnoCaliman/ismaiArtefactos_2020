@@ -640,7 +640,8 @@ void loop()
 - Agora cria-se lógica onde através da variável ~estadoLed~ monitora-se o estado /booleano/ do Led ("está acesso ou apagado?").
 - Desafio: depois de ler a documentação do /operador lógico NOT/ (https://www.arduino.cc/reference/en/language/structure/boolean-operators/logicalnot/), você é capaz de reescrever o Ex.17 sem usar nenhum ~if()~, mas ainda com apenas um ~digitalWrite()~?
 
-\\
+** Blink sem delay
+
 - Ex.18 - blinkSemDelay -  https://www.tinkercad.com/things/3RZ8sFVXgCy
 #+BEGIN_SRC c
 int pinoLed = 13;
