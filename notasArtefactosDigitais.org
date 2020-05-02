@@ -638,6 +638,48 @@ void loop()
 
 - Piscagem de um LED (como Ex.1 - Blink), mas sem valores /hardcoded/ ~HIGH~ e ~LOW~ em duas chamadas para a função ~digitalWrite()~.
 - Agora cria-se lógica onde através da variável ~estadoLed~ monitora-se o estado /booleano/ do Led ("está acesso ou apagado?").
+- Desafio: depois de ler a documentação do /operador lógico NOT/ (https://www.arduino.cc/reference/en/language/structure/boolean-operators/logicalnot/), você é capaz de reescrever o Ex.17 /sem usar nenhum ~if()~/?
 
 \\
 - Ex.18 - blinkSemDelay -  https://www.tinkercad.com/things/3RZ8sFVXgCy
+#+BEGIN_SRC c
+int pinoLed = 13;
+int intervalo = 1000;
+int tempoAnterior = 0;
+int estadoLed = HIGH;
+int tempoAtual;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  tempoAtual = millis();
+  
+  if (tempoAtual - tempoAnterior > intervalo)
+  {
+    digitalWrite(pinoLed, estadoLed);
+    
+    if (estadoLed == HIGH)
+    {
+   	estadoLed = LOW;
+    }
+    else
+    {
+  	estadoLed = HIGH;
+    }
+
+    Serial.print("entrou no if. estadoLed = ");
+    Serial.println(estadoLed);
+    
+    tempoAnterior = tempoAtual;
+  }
+}
+#+END_SRC
+
+- Perguntas:
+  - Qual a ordem de execução das expressões na linha ~if (tempoAtual - tempoAnterior > intervalo)~?
+  - A que a linha ~tempoAnterior = tempoAtual~ faz?
