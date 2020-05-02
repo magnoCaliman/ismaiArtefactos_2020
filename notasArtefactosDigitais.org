@@ -562,3 +562,40 @@ void loop()
   
 *** Desafio extra:
 - Crie um circuito onde ao apertar um botão um LED acende /e permanece acesso/, e ao apertar de novo, o LED apague.
+
+* AULA 08 - 21/ABR
+
+** ~millis()~
+- Documentação: https://www.arduino.cc/reference/en/language/functions/time/millis/
+
+- Função que retorna um valor, em /millisegundos/, que marca a quanto tempo o programa está sendo executado no Arduino.
+- Lembrando: 1000 millisegundos == 1 segundo.
+
+#+BEGIN_SRC c
+//int tempo;
+unsigned long tempo;
+  
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  tempo = millis();
+ 
+  Serial.println(tempo);
+  
+  delay(100);
+}
+#+END_SRC
+
+- Variáveis do tipo ~int~ tem um limite máximo de tamanho. A "caixa" só consegue guardar números entre -32.768 e 32.767. (https://www.arduino.cc/reference/en/language/variables/data-types/int/)
+- Se usamos uma variável do tipo ~int~ para armazenar valor de ~millis()~, em pouco mais de 30 segundos a variável chega em seu valor máximo, e temos um problema de /stack overflow/: o valor dentro da variável "transborda" depois de 32.767, e pula para o valor mínimo.
+  - No Ex.15, experimente trocar o tipo da variável ~tempo~ e veja veja o monitor serial.
+
+- Como evitar:
+  - Usar uma "caixa" que comporta valores maiores. Mudar tipo da variável ~tempo~ para ~long~, capaz de armazenar valores entre -2.147.483.648 e 2.147.483.647 (https://www.arduino.cc/reference/en/language/variables/data-types/long/)
+
+- ~millis()~ é um contador de tempo, começa contagem do zero, portanto nunca tem valores negativos. Usa-se então um /qualificador/ ao início da declaração da variável para especificar que aquela variável agora só comporta valores positivos. ~unsigned~ = "sem sinal".
+  - Observe: agora a variável ~unsigned long tempo~ pode comportar valores entre 0 e 4.294.967.295. Seu tamanho é o mesmo de antes, o /âmbito/ é que foi transposto para o universo dos números positivos.
