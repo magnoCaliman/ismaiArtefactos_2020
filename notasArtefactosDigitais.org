@@ -700,6 +700,7 @@ void loop()
 
 - Adafruit: https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor/how-pirs-work
 
+\\
 - Ex.19 - PIR - https://www.tinkercad.com/things/ihpFUm9DJF3 
 #+BEGIN_SRC c
 int pinoLED = 7;
@@ -774,9 +775,9 @@ void loop()
 
 - Perceba que o código do Ex.20 é idêntico ao Ex.19. A lógica do algoritmo é a mesma: ler o estado de um sensor booleano (~HIGH~ ou ~LOW~) através de um pino digital, e guardar esse estado em uma variável. O mesmo modelo serve para qualquer sensor booleano/digital (botões, sensores de infravermelho, inclinação, etc) já que independentemente de como seus circuitos funcionam, seus /outputs/ elétricos são idênticos: alternância digitais (ou seja, sem valores intermediários) entre um valor mínimo (em geral 0V) e máximo (em geral 3.3V ou 5V).
 - A escolha de um sensor digital então se torna uma questão não de eletrônica ou de programação, mas de /design de interação/. O que é mais adequado para minha aplicação?
-  - Detalhe para pensar: alguns sensores, como o de inclinação, possuem /interações analógicas/ (existem infinitas posições que o sensor pode estar) porém /repostas digitais/ (em algum momento sua leitura muda instantaneamente de ~HIGH~ para ~LOW~). 
+  - Detalhe para pensar: alguns sensores, como o de inclinação, possuem /interações analógicas/ (existem infinitas posições que o sensor pode estar) porém /respostas digitais/ (em algum momento sua leitura muda instantaneamente de ~HIGH~ para ~LOW~). 
 
-*** (ainda) outros sensores digitais
+*** (Ainda) outros sensores digitais
 - Hall effect sensor
   - https://en.wikipedia.org/wiki/Hall_effect_sensor
   - https://www.youtube.com/watch?v=4eqi0G7uY_4
