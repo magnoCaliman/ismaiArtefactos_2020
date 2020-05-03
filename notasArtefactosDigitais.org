@@ -840,3 +840,37 @@ void loop()
   Serial.println("Saiu do for()");
 }
 #+END_SRC
+
+- Ex.23 - forLED - https://www.tinkercad.com/things/0tUJmd9ZkhZ 
+#+BEGIN_SRC c
+int tempoDelay = 500;
+int pinoLed_verde = 2;
+
+void setup()
+{
+  pinMode(2, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  
+  Serial.begin(9600);
+}
+
+void loop()
+{
+
+  for(int i = 4; i < 8; i = i + 1)
+  {
+    digitalWrite(i, HIGH);
+    delay(tempoDelay);
+    digitalWrite(i, LOW);
+    delay(tempoDelay);
+  }
+  
+  digitalWrite(pinoLed_verde, HIGH);
+  delay(tempoDelay);
+  digitalWrite(pinoLed_verde, LOW);
+  delay(tempoDelay);
+}
+#+END_SRC
