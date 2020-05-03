@@ -602,7 +602,6 @@ void loop()
 - ~millis()~ é um contador de tempo, começa contagem do zero, portanto nunca tem valores negativos. Usa-se então um /qualificador/ ao início da declaração da variável para especificar que aquela variável agora só comporta valores positivos. ~unsigned~ = "sem sinal". (https://www.arduino.cc/reference/en/language/variables/data-types/unsignedlong/)
   - Observe: agora a variável ~unsigned long tempo~ pode comportar valores entre 0 e 4.294.967.295. Seu tamanho é o mesmo de antes, o /âmbito/ é que foi transposto para o universo dos números positivos.
 
-\\
 - Ex.17 - blink_if - https://www.tinkercad.com/things/07l1cmCVVjO
 #+BEGIN_SRC c
 int pinoLed = 13;
@@ -700,7 +699,6 @@ void loop()
 
 - Adafruit: https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor/how-pirs-work
 
-\\
 - Ex.19 - PIR - https://www.tinkercad.com/things/ihpFUm9DJF3 
 #+BEGIN_SRC c
 int pinoLED = 7;
@@ -847,7 +845,6 @@ void loop()
 - Como ~if()~, existe um teste booleano. Porém agora com um /incremento/ ~i = i + 1~, que é avaliado sempre que o teste retornar ~true~.
 - Sempre importante atentar quando/se o teste retornará ~false~. Caso o teste nunca seja falso, cria-se um loop infinito e a execução do código nunca sairá de dentro do bloco ~for()~.
 
-\\
 - Ex.23 - forLED - https://www.tinkercad.com/things/0tUJmd9ZkhZ 
 #+BEGIN_SRC c
 int tempoDelay = 500;
