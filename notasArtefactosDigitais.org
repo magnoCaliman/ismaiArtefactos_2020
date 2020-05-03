@@ -881,3 +881,9 @@ void loop()
   delay(tempoDelay);
 }
 #+END_SRC
+
+- Pergunta: por que não é necessário declarar variáveis para os pinos dos Leds vermelhos (pinos 4, 5, 6, 7)?
+
+** TPC
+- Construir uma linha de leds com acendimento em sequência (como Ex.23), e dois botões que aumentam e diminuem a velocidade do ciclo.
+- Contruir circuito onde um transistor controla ligação de um motor (ou seja, com bateria de 9V), mas o controle do transistor é mais interativo do que somente "Blink com delay".
