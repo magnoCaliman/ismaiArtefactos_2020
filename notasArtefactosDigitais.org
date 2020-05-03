@@ -739,7 +739,7 @@ void loop()
 
 - Tipos de sensores de inclinação: http://blog.vidianindhita.com/2018/02/27/all-about-tilt-switches/
 
--Ex.20 - tiltSwitch - https://www.tinkercad.com/things/9EcdwRmgLSX  
+- Ex.20 - tiltSwitch - https://www.tinkercad.com/things/9EcdwRmgLSX  
 #+BEGIN_SRC c
 int pinoLED = 7;
 int pinoSensor = 9;
@@ -790,7 +790,7 @@ void loop()
 
 ** Transistor
 
--Ex.21 - transistorSwitch - https://www.tinkercad.com/things/eHFsPgfAZPg 
+- Ex.21 - transistorSwitch - https://www.tinkercad.com/things/eHFsPgfAZPg 
 #+BEGIN_SRC c
 int pinoBaseTrans = 9;
 
@@ -808,8 +808,8 @@ void loop()
 }
 #+END_SRC
 
-- Pinos no Arduino conseguem alimentar apenas componentes com pouca demanda elétrica, como LEDs (lembrando: pinos no Arduino disponibilizam no máximo 5V). Para componentes maiores, como um motor, usa-se uma fonte de energia externa (9V ou 12V, por exemplo), e um transistor que servirá como /um interruptor para deixar passar ou não o fluxo dessa carga elétrica mais potente/.
-  - Se interruptores (botões, sensores de inclinação, etc) podem ser encarados como um cano com duas aberturas (por isso dois pinos em sensores como o de inclinação), por onde a água/energia flui, transistores são como canos que possuem uma válvula "no meio" (por isso os três pinos do transistor). A energia está sempre fluindo pelos pinos /coletor/ e /emissor/ do transistor alimentada bateria de 9V. O que controlamos com o Arduino é o pino /base/, a "válvula", usando os 5V do pino digital.
+- Pinos no Arduino conseguem alimentar apenas componentes com pouca demanda elétrica, como LEDs (lembrando: pinos no Arduino disponibilizam no máximo 5V). Para componentes maiores, como um motor, usa-se uma fonte de energia externa (9V ou 12V, por exemplo), e um transistor que servirá como /um interruptor para deixar passar ou não o fluxo dessa carga elétrica externa mais potente/.
+  - Se interruptores (botões, sensores de inclinação, etc) podem ser entendidos como um cano com duas aberturas (por isso dois pinos em sensores como o de inclinação), por onde a água/energia flui, transistores são como canos que possuem uma válvula "no meio" (por isso os três pinos do transistor). A energia está sempre fluindo pelos pinos /coletor/ e /emissor/ do transistor, vindo da bateria de 9V. O que controlamos com o Arduino é o pino /base/, a "válvula", usando os 5V do pino digital.
 
 - O código é como o Ex.1 - Blink: ligação de um pino digital interrompida por um ~delay()~. Porém agora o pino do Arduino não alimenta eletricamente o componente de forma direta, e sim "abre e fecha" o transistor, através do seu pino /base/.
 
