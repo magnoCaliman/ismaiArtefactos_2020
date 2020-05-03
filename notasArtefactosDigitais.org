@@ -819,6 +819,9 @@ void loop()
 
 ** ~for()~
 
+- Documentação: https://www.arduino.cc/reference/en/language/structure/control-structure/for/
+  - The ~for~ statement is used to repeat a block of statements enclosed in curly braces. An increment counter is usually used to increment and terminate the loop. The ~for~ statement is useful for any repetitive operation.
+
 - Ex.22 - for() - https://www.tinkercad.com/things/gMTfF83LH2Y 
 #+BEGIN_SRC c
 void setup()
@@ -841,6 +844,10 @@ void loop()
 }
 #+END_SRC
 
+- Como ~if()~, existe um teste booleano. Porém agora com um /incremento/ ~i = i + 1~, que é avaliado sempre que o teste retornar ~true~.
+- Sempre importante atentar quando/se o teste retornará ~false~. Caso o teste nunca seja falso, cria-se um loop infinito e a execução do código nunca sairá de dentro do bloco ~for()~.
+
+\\
 - Ex.23 - forLED - https://www.tinkercad.com/things/0tUJmd9ZkhZ 
 #+BEGIN_SRC c
 int tempoDelay = 500;
