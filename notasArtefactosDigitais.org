@@ -895,7 +895,7 @@ void loop()
 
 -----
 
-- *Ver arquivo /esquematicosAula10.pdf/*
+- *Ver arquivo esquematicosAula10.pdf*
 
 -----
 
