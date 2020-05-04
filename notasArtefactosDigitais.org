@@ -893,7 +893,11 @@ void loop()
   - https://learn.sparkfun.com/tutorials/how-to-read-a-schematic/all
   - https://en.wikipedia.org/wiki/Electronic_symbol
 
-- Ver arquivo /esquematicosAula10.pdf/
+-----
+
+- *Ver arquivo /esquematicosAula10.pdf/*
+
+-----
 
 - /Experimento 4: desenhar esquemático do Experimento 2: https://en.wikipedia.org/wiki/Electronic_symbol/
 
