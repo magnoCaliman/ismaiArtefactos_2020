@@ -885,6 +885,7 @@ void loop()
 - Construir uma linha de leds com acendimento em sequência (como Ex.23), e dois botões que aumentam e diminuem a velocidade do ciclo.
 - Contruir circuito onde um transistor controla ligação de um motor (ou seja, com bateria de 9V), mas o controle do transistor é mais interativo do que somente "Blink com delay".
 
+
 * AULA 10 - 05/MAI
 
 ** Esquemáticos eletrônicos
@@ -899,11 +900,12 @@ void loop()
 
 -----
 
-- /Experimento 4: desenhar esquemático do Experimento 2: https://en.wikipedia.org/wiki/Electronic_symbol/
+- /Experimento 4: desenhar esquemático do Experimento 2:  https://www.tinkercad.com/things/djHUEO9MFJB/
+
 
 ** TPC
 
-- Desenhar esquemático do Experimento 1: https://en.wikipedia.org/wiki/Electronic_symbol
+- Desenhar esquemático do Experimento 1:  https://www.tinkercad.com/things/5b7xva4baRr 
   - Dica: o piezo também pode ser chamado de /buzzer/, ou pode ser desenhado também como uma simples coluna ("/loudspeaker/").
 - Desenhar esquemático do Ex.20 - tiltSwitch:  https://www.tinkercad.com/things/9EcdwRmgLSX 
   - Dica: o sensor de inclinação também pode ser chamado de /mercury switch/.
