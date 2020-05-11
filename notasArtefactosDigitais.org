@@ -308,7 +308,7 @@ void distanciaEntrePessoas()
 
 - Resumão: https://www.arduino.cc/en/Tutorial/Variables
 
-- ~int x = 10~ -> Dissecando as 4 partes do uso de uma variável *no Arduino*n:
+- ~int x = 10~ -> Dissecando as 4 partes do uso de uma variável *no Arduino*:
   - ~int~ -> tipo de dado (data type)
   - ~x~ -> nome
   - ~=~ -> atribuição de valor
@@ -909,3 +909,92 @@ void loop()
   - Dica: o piezo também pode ser chamado de /buzzer/, ou pode ser desenhado também como uma simples coluna ("/loudspeaker/").
 - Desenhar esquemático do Ex.20 - tiltSwitch:  https://www.tinkercad.com/things/9EcdwRmgLSX 
   - Dica: o sensor de inclinação também pode ser chamado de /mercury switch/.
+
+
+* AULA 11 - 12/MAI
+
+** Potenciômetros
+- /Rocha, H - Introdução à Eletrônica Para Artistas - p.38/
+  - "Potenciômetros são *resistores variáveis*"
+  - Isso explica o seu símbolo esquemático.
+
+- Ex.24 - potBateria - https://www.tinkercad.com/things/c2HKD5DXePg
+- Ex.25 - RGB - https://www.tinkercad.com/things/lcEyQkjYKhN 
+
+** ~analogRead()~
+- Documentação - https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/
+- Ex.26 - analogRead - https://www.tinkercad.com/things/59Ov4tOYDdk 
+#+BEGIN_SRC c
+int pinoSensor = A0;
+int valorSensor;
+
+void setup()
+{
+  pinMode(pinoSensor, INPUT); // pinos analógicos são configurados como INPUT automaticamente
+                              // portanto essa linha é redundante
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  valorSensor = analogRead(pinoSensor);
+  
+  Serial.println(valorSensor);
+  delay(100);
+}
+#+END_SRC
+
+- Da documentação:
+  - /"If the analog input pin is not connected to anything, the value returned by analogRead() will fluctuate based on a number of factors (e.g. the values of the other analog inputs, how close your hand is to the board, etc.)"/
+
+- Experimento 5:
+  - Construa um circuito onde um potenciometro controla o tempo de piscagem de um LED.
+
+** Analógico vs. Digital
+- Perguntas:
+  - De onde vem o valor 1023 retornado pela função ~analogRead()~?
+  - Por que no Processing, ~fill(255)~ é o maior valor de cor?
+
+- Conceitos importantes:
+  - Resolução
+  - Conversão
+
+- Quantos pontos existem em uma reta?
+
+** ~analogWrite()~
+- Ex.27 - analogWrite - https://www.tinkercad.com/things/6wNJBK3QRP1 
+#+BEGIN_SRC c
+int pinoLed = 3;
+int brilhoLed = 255;
+
+void setup()
+{
+  pinMode(pinoLed, OUTPUT);
+}
+
+void loop()
+{
+  //experimente com outros valores para a variável brilhoLed
+  //aqui vão algumas sugestões:
+  
+  //brilhoLed = 1;
+  //brilhoLed = 50;
+  //brilhoLed = 150;
+  //brilhoLed = 257;
+  brilhoLed = 300;
+  
+  analogWrite(pinoLed, brilhoLed);
+  
+  delay(10); //quando envolve conversão e pinos analógicos
+             //convém deixar um delay curto ao fim do programa
+  
+}
+#+END_SRC
+
+- Perguntas:
+  - Quais voltagens estão saíndo do pino 3?
+  - Quais pinos usar com ~analogWrite()~?
+    - PWM: https://www.arduino.cc/en/Tutorial/PWM
+
+- Experimento 6:
+  - Crie (sem usar potenciômetros) um circuito que faça um fade-in e fade-out de um led.
