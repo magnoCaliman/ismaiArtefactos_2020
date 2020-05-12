@@ -1003,7 +1003,7 @@ void loop()
 - /Escritas/ de valores analógicos (como controlar o brilho de um led) são feitas nos pinos digitais, mas somente nos pinos que suportam PWM.
   - Essas escritas usam a função ~analogWrite()~ e tem resolução /entre 0 e 255/.
 
-- TPC:
+** TPC:
   - Crie (sem usar potenciômetros) um circuito que faça um fade-in e fade-out de um led.
     - Dica: talvez você precise iterar uma variável...
 
