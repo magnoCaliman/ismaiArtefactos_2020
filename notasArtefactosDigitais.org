@@ -996,5 +996,16 @@ void loop()
   - Quais pinos usar com ~analogWrite()~?
     - PWM: https://www.arduino.cc/en/Tutorial/PWM
 
-- Experimento 6:
+** RESUMÃO
+- /Leituras/ de valores analógicos (como ler um potenciômetro) são feitas nos pinos ~A0~ até ~A5~
+  - Essas leituras usam a função ~analogRead()~ e tem resolução /entre 0 e 1023/.
+
+- /Escritas/ de valores analógicos (como controlar o brilho de um led) são feitas nos pinos digitais, mas somente nos pinos que suportam PWM.
+  - Essas escritas usam a função ~analogWrite()~ e tem resolução /entre 0 e 255/.
+
+- TPC:
   - Crie (sem usar potenciômetros) um circuito que faça um fade-in e fade-out de um led.
+    - Dica: talvez você precise iterar uma variável...
+
+- TPC extra:
+  - Controle o brilho de um led com um potenciômetro. Que problemas de ajustes de valores apareceram?
