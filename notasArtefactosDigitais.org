@@ -1044,6 +1044,9 @@ void loop()
 - Documentação: https://www.arduino.cc/reference/en/language/functions/math/map/
 
 - Ex.29 - potMap - https://www.tinkercad.com/things/fLKFN0q2qrb 
+[[
+/aula12/exemplo29.png]]
+
 #+BEGIN_SRC c
 int pinoPot = A0;
 int leituraPot;
@@ -1099,8 +1102,9 @@ void loop()
 }
 #+END_SRC
 
-- /Experimento 6: construa o seguinte circuito, de modo que o valor máximo de rotação do motor seja aproximadamente 1000 RPM./
+- /Experimento 6: construa o circuito da imagem, de modo que o valor máximo de rotação do motor seja aproximadamente 1000 RPM./
   - Possível solução: https://www.tinkercad.com/things/3bkbxhNegGF 
 
+[[/examples_WorkshopSomar/tone_02/tone_02.png]
+
 ** LDR
-** transistor + potenciômetro
