@@ -1107,9 +1107,9 @@ void loop()
 }
 #+END_SRC
 
-- /Experimento 6: construa o circuito da imagem, de modo que o valor máximo de rotação do motor seja aproximadamente 1000 RPM./
+** TPC
+
+- Construa o circuito da imagem, de modo que o valor máximo de rotação do motor seja aproximadamente 1000 RPM
   - Possível solução: https://www.tinkercad.com/things/3bkbxhNegGF 
 
-[[/aula12/experimento06.png]]
-
-** LDR
+[[/aula12/tpc_aula12.png]]
