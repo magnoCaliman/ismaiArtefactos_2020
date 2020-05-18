@@ -1072,7 +1072,7 @@ void loop()
 - Revisando: ~analogRead()~ converte uma variação de 0-5V para valores entre 0-1023.
 - ~map()~ escalona proporcionalmente um /âmbito de entrada/ para um /âmbito de saída/. 
   - É como reescrever os números em uma régua...
-
+\\
 - Ex.30 - potFade - https://www.tinkercad.com/things/1LCSQownRtU 
 #+BEGIN_SRC c
 int pinoPot = A0;
