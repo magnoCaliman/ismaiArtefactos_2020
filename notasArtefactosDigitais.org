@@ -947,8 +947,7 @@ void loop()
 - Da documentação:
   - /"If the analog input pin is not connected to anything, the value returned by analogRead() will fluctuate based on a number of factors (e.g. the values of the other analog inputs, how close your hand is to the board, etc.)"/
 
-- Experimento 5:
-  - Construa um circuito onde um potenciometro controla o tempo de piscagem de um LED.
+- /Experimento 5: construa um circuito onde um potenciometro controla o tempo de piscagem de um LED/
 
 ** Analógico vs. Digital
 - Perguntas:
@@ -1043,7 +1042,6 @@ void loop()
 
 ** ~map()~
 - Documentação: https://www.arduino.cc/reference/en/language/functions/math/map/
-  - Como reescrever os números em uma régua...
 
 - Ex.29 - potMap - https://www.tinkercad.com/things/fLKFN0q2qrb 
 #+BEGIN_SRC c
@@ -1072,7 +1070,8 @@ void loop()
 #+END_SRC
 
 - Revisando: ~analogRead()~ converte uma variação de 0-5V para valores entre 0-1023.
-- ~map()~ escalona proporcionalmente um /âmbito de entrada/ para um /âmbito de saída/. É uma função que faz regra de três... 
+- ~map()~ escalona proporcionalmente um /âmbito de entrada/ para um /âmbito de saída/. 
+  - É como reescrever os números em uma régua...
 
 - Ex.30 - potFade - https://www.tinkercad.com/things/1LCSQownRtU 
 #+BEGIN_SRC c
@@ -1100,7 +1099,7 @@ void loop()
 }
 #+END_SRC
 
-- Experimento 6: construa o seguinte circuito, de modo que o valor máximo de rotação do motor seja aproximadamente 1000 RPM.
+- /Experimento 6: construa o seguinte circuito, de modo que o valor máximo de rotação do motor seja aproximadamente 1000 RPM./
   - Possível solução: https://www.tinkercad.com/things/3bkbxhNegGF 
 
 ** LDR
