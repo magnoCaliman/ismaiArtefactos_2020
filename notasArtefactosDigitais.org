@@ -1009,3 +1009,99 @@ void loop()
 
 - TPC extra:
   - Controle o brilho de um led com um potenciômetro. Que problemas de ajustes de valores apareceram?
+
+* AULA 12 - 19/MAI
+
+** ~analogWrite()~ (uma vez mais...)
+- Ex.28 - ledFade - https://www.tinkercad.com/things/1bHZQnLOvTd 
+#+BEGIN_SRC c
+int pinoLed = 9; // o pino 9 aceita PWM!
+int brilhoLed = 0;
+
+void setup()
+{
+  pinMode(pinoLed, OUTPUT);
+  
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  brilhoLed = brilhoLed + 1;
+  analogWrite(pinoLed, brilhoLed);
+  
+  Serial.println(brilhoLed);
+  delay(10);
+}
+#+END_SRC
+
+- Revisando: a função ~analogWrite()~ consegue /simular/ valores analógicos (em alguns pinos), dividindo os 5V do pino digital com uma /resolução máxima/ limitada à 256 valores diferentes (variando entre 0-255).
+
+- Pergunta:
+  - O que acontece então se escrevermos valores maiores que 255 como argumento de ~analogWrite()~?
+  - Dica: a resposta está no Ex.16, Aula 08.
+
+** ~map()~
+- Documentação: https://www.arduino.cc/reference/en/language/functions/math/map/
+  - Como reescrever os números em uma régua...
+
+- Ex.29 - potMap - https://www.tinkercad.com/things/fLKFN0q2qrb 
+#+BEGIN_SRC c
+int pinoPot = A0;
+int leituraPot;
+
+void setup()
+{
+  pinMode(pinoPot, INPUT);
+  
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  leituraPot = analogRead(pinoPot);
+  Serial.print("valor original: ");
+  Serial.println(leituraPot);
+  
+  int leituraPot_mapeado = map(leituraPot, 0, 1023, 0, 500); //pq 0, 500?
+  Serial.print("valor mapeado: ");
+  Serial.println(leituraPot_mapeado);
+  
+  delay(200);
+}
+#+END_SRC
+
+- Revisando: ~analogRead()~ converte uma variação de 0-5V para valores entre 0-1023.
+- ~map()~ escalona proporcionalmente um /âmbito de entrada/ para um /âmbito de saída/. É uma função que faz regra de três... 
+
+- Ex.30 - potFade - https://www.tinkercad.com/things/1LCSQownRtU 
+#+BEGIN_SRC c
+int pinoPot = A0;
+int pinoLed = 9;
+int leituraPot;
+
+void setup()
+{
+  pinMode(pinoPot, INPUT);
+  pinMode(pinoLed, OUTPUT);
+  
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  leituraPot = analogRead(pinoPot);
+  
+  leituraPot = map(leituraPot, 0, 1023, 0, 255);
+  analogWrite(pinoLed, leituraPot);
+  
+  Serial.println(leituraPot);
+  delay(10);
+}
+#+END_SRC
+
+- Experimento 6: construa o seguinte circuito, de modo que o valor máximo de rotação do motor seja aproximadamente 1000 RPM.
+  - Possível solução: https://www.tinkercad.com/things/3bkbxhNegGF 
+
+** LDR
+** transistor + potenciômetro
