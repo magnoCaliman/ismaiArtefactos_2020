@@ -1076,7 +1076,7 @@ void loop()
 - ~map()~ escalona proporcionalmente um /âmbito de entrada/ para um /âmbito de saída/. 
   - É como reescrever os números em uma régua...
 
-\\
+** ~analogRead()~ + ~analogWrite()~ + ~map()~
 
 - Ex.30 - potFade - https://www.tinkercad.com/things/1LCSQownRtU 
 
