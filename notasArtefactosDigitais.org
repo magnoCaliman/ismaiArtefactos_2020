@@ -1075,8 +1075,13 @@ void loop()
 - Revisando: ~analogRead()~ converte uma variação de 0-5V para valores entre 0-1023.
 - ~map()~ escalona proporcionalmente um /âmbito de entrada/ para um /âmbito de saída/. 
   - É como reescrever os números em uma régua...
+
 \\
+
 - Ex.30 - potFade - https://www.tinkercad.com/things/1LCSQownRtU 
+
+[[/aula12/exemplo30.png]]
+
 #+BEGIN_SRC c
 int pinoPot = A0;
 int pinoLed = 9;
@@ -1104,5 +1109,7 @@ void loop()
 
 - /Experimento 6: construa o circuito da imagem, de modo que o valor máximo de rotação do motor seja aproximadamente 1000 RPM./
   - Possível solução: https://www.tinkercad.com/things/3bkbxhNegGF 
+
+[[/aula12/experimento06.png]]
 
 ** LDR
