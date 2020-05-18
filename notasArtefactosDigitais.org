@@ -1109,7 +1109,9 @@ void loop()
 
 ** TPC
 
-- Construa o circuito da imagem, de modo que o valor máximo de rotação do motor seja aproximadamente 1000 RPM
+- Construa o circuito da imagem, de modo que o valor máximo de rotação do motor seja aproximadamente 1000 RPM.
   - Possível solução: https://www.tinkercad.com/things/3bkbxhNegGF 
 
 [[/aula12/tpc_aula12.png]]
+
+- Construa um circuito e desenhe seu esquemático, que use pelo menos um potenciômetro e mais dois componentes.
