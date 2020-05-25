@@ -1123,7 +1123,8 @@ void loop()
 ** LDR
 - Ex.31 - LDR_1 - https://www.tinkercad.com/things/aLAjPfD1aBN 
 - LDR = Light Dependent Resistor, também às vezes chamado de /photoresistor/.
-- A resistência do LDR varia de acordo com a quantidade de luz que incide sobre o componente. Mais luz = menos resistência, menos luz = mais resistência.
+  - A resistência do LDR varia de acordo com a quantidade de luz que incide sobre o componente. 
+  - Mais luz = menos resistência, menos luz = mais resistência.
 
 - Ex.32 - LDR_2 - https://www.tinkercad.com/things/0AVtxSbidhW 
 #+BEGIN_SRC c
