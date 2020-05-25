@@ -1009,6 +1009,7 @@ void loop()
 - TPC extra:
   - Controle o brilho de um led com um potenciômetro. Que problemas de ajustes de valores apareceram?
 
+
 * AULA 12 - 19/MAI
 
 ** ~analogWrite()~ (uma vez mais...)
@@ -1115,3 +1116,101 @@ void loop()
 [[/aula12/tpc_aula12.png]]
 
 - Construa um circuito e desenhe seu esquemático, que use pelo menos um potenciômetro e mais dois componentes.
+
+
+* AULA 13 - 26/MAI
+
+** LDR
+- Ex.31 - LDR_1 - https://www.tinkercad.com/things/aLAjPfD1aBN 
+- LDR = Light Dependent Resistor, também às vezes chamado de /photoresistor/.
+- A resistência do LDR varia de acordo com a quantidade de luz que incide sobre o componente. Mais luz = menos resistência, menos luz = mais resistência.
+
+- Ex.32 - LDR_2 - https://www.tinkercad.com/things/0AVtxSbidhW 
+#+BEGIN_SRC c
+int pinoSensor = A0;
+int valorSensor;
+
+void setup()
+{
+  pinMode(pinoSensor, INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  valorSensor = analogRead(pinoSensor); 
+  Serial.println(valorSensor);
+  
+  delay(100);
+}
+#+END_SRC
+Pergunta: por que esse valores mínimos e máximos no monitor serial? Qual a relação com a resolução dos pinos analógicos?
+
+- /Experimento 6: construa um circuito onde, um LDR determina se um led acende ou não, a partir de um valor máximo de leitura./
+  - Possível solução: https://www.tinkercad.com/things/gNj8rkrXpS4 
+
+** ~while()~
+- Documentação: https://www.arduino.cc/reference/en/language/structure/control-structure/while/
+
+- Ex.33 - while() - https://www.tinkercad.com/things/8ecBdnfV3Rl 
+#+BEGIN_SRC c
+int contador = 1;
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{ 
+  while(contador < 10)
+  {
+    Serial.print("dentro do while. loop n.: ");
+    Serial.println(contador);
+    
+    contador++;
+    
+    delay(500);
+  }
+  
+  Serial.println("fora do while");
+  delay(500);
+}
+#+END_SRC
+
+- Como o ~for()~, é uma estrutura de controle de /loop/, porém com algumas diferenças de sintaxe e comportamento.
+
+- Ex.34 - whileBug - https://www.tinkercad.com/things/c1lgQfIa192
+  - Esse circuito /deveria/ se comportar da seguinte maneira: enquanto o botão está apertado, o monitor serial printa ~1~, juntamente da frase ~dentro do while~. Porém, existe aí um bug. Como consertar?
+#+BEGIN_SRC c
+int pinoBotao = 2;
+int estadoBotao;
+
+void setup()
+{
+  pinMode(pinoBotao, INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  estadoBotao = digitalRead(pinoBotao);
+  Serial.println(estadoBotao);
+  
+  while(estadoBotao == HIGH)
+  {
+    Serial.println("dentro do while");
+  }
+  
+  Serial.println("fora do while");
+  delay(100);
+}
+#+END_SRC
+
+- Uma das principais diferença de funcionamento e uso entre ~for()~ e ~while()~: no loop ~for()~ temos que declarar, obrigatoriamente, a quantidade de repetições que queremos do nosso bloco de código; no ~while()~, não necessariamente.
+
+# ** sensor temperatura
+# ** transistor?
+
+** TPC
+- Refactorar TPC piano aula 07, agora usando ~while()~.
