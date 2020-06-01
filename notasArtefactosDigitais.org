@@ -1217,3 +1217,107 @@ void loop()
 
 ** TPC
 - Refactorar TPC piano aula 07, agora usando ~while()~.
+
+
+* AULA 14 - 02/JUN
+
+** Temperatura
+- Ex.35 - temperatura - https://www.tinkercad.com/things/dqXzAU4LDmM  
+#+BEGIN_SRC c
+int pinoSensor = A0;
+int valorSensor;
+
+void setup()
+{
+  pinMode(pinoSensor, INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  valorSensor = analogRead(pinoSensor);
+  
+  Serial.println(valorSensor);
+  delay(100);
+}
+#+END_SRC
+
+- Regra Nᵒ0 da programação: ao se deparar com uma função que não conhece, consulte a documentação (aka RTFM...). Mas o que fazer com componentes eletrônicos desconhecidos?
+  - Data sheets!
+
+** Bibliotecas externas
+- Diferenças entre tipos de motores: https://www.circuito.io/blog/arduino-motor-guide/
+
+Ex.36 - servoMotor - https://www.tinkercad.com/things/bh5c2ZGUYNx 
+#+BEGIN_SRC c
+#include <Servo.h>
+
+int i = 0;
+
+Servo servoPino9; //atenção para sintaxe!
+
+void setup()
+{
+  servoPino9.attach(9);
+}
+
+void loop()
+{
+  servoPino9.write(i);
+  i = i + 5;
+  
+  if (i > 180) // pq 180?
+  {
+  	i = 0;
+  }
+  
+  delay(100);
+}
+#+END_SRC
+
+- Documentação da biblioteca Servo: https://www.arduino.cc/en/Reference/Servo
+
+- Bibliotecas externas (criadas por terceiros) adicionam funcionalidades extras à uma linguagens de programação ou software.
+  - Muitas vezes usadas para permitir a realização de tarefas especializadas e/ou adicionar suporte para novas funcionalidades não existentes quando do design original da linguagem.
+
+- A utilização de bibliotecas externas em linguagens como Arduino e Processing utiliza uma sintaxe que advém de um paradigma de programação chamado /Programação Orientada a Objeto/ (OOP).
+- OPP é um tópico bastante extenso. Para esse exemplo, precisamos nos concentrar em:
+  - Como ~Servo servoPino9~ declara uma /variável do tipo Servo/ (cuja nomenclatura correta em OPP é /"instanciar um objeto da classe Servo/");
+  - Nova sintaxe em ~servoPino9.attach()~ e ~servoPino9.write()~, onde usamos /dot notation/ para utilizar funções sobre a variável ~servoPino9~ (essas funções, em OPP por vezes são chamadas de /"métodos"/).
+  - Onde essa sintaxe já apareceu?
+
+- Pergunta: por que o servo não volta para posição inicial após o primeiro ciclo?
+
+- /Experimento: crie um circuito onde a posição de um servo é controlada por um potenciômetro./
+
+** Transistor (como controlador analógico)
+- Ex.37 - transistorAnalogico - https://www.tinkercad.com/things/gvHimiPb4Tx 
+#+BEGIN_SRC c
+int pinoBaseTrans = 9;
+int i = 0;
+
+void setup()
+{
+  pinMode(pinoBaseTrans, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  i++;
+  analogWrite(pinoBaseTrans, i%255); // % -> "modulo operator"
+  
+  Serial.println(i);
+  delay(50);
+}
+#+END_SRC
+
+** Operador de módulo: ~%~
+- Documentação: https://www.arduino.cc/en/pmwiki.php?n=Reference/Modulo
+- Como um relógio de ponteiros:
+  - 13h = 1h (~13 % 12 = 1~)
+  - 14h = 2h (~14 % 12 = 2~)
+- Como contar usando os dedos de apenas uma mão:
+  - 7 unidades = 2 dedos (~7 % 5 = 2~)
+  - 8 unidades = 3 dedos (~8 % 5 = 3~)
+  - 13 unidades = 3 dedos (~13 % 5 = 3~)
