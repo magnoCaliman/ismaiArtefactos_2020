@@ -1282,8 +1282,8 @@ void loop()
 
 - A utilização de bibliotecas externas em linguagens como Arduino e Processing utiliza uma sintaxe que advém de um paradigma de programação chamado /Programação Orientada a Objeto/ (OOP).
 - OPP é um tópico bastante extenso. Para esse exemplo, precisamos nos concentrar em:
-  - Como ~Servo servoPino9~ declara uma /variável do tipo Servo/ (cuja nomenclatura correta em OPP é /"instanciar um objeto da classe Servo/");
-  - Nova sintaxe em ~servoPino9.attach()~ e ~servoPino9.write()~, onde usamos /dot notation/ para utilizar funções sobre a variável ~servoPino9~ (essas funções, em OPP por vezes são chamadas de /"métodos"/).
+  - Como ~Servo servoPino9~ declara uma /variável do tipo Servo/ (cuja nomenclatura correta em OPP é /instanciar um objeto da classe Servo/);
+  - Nova sintaxe em ~servoPino9.attach()~ e ~servoPino9.write()~, onde usamos /dot notation/ para utilizar funções sobre a variável ~servoPino9~ (essas funções, em OPP por vezes são chamadas de /métodos/).
   - Onde essa sintaxe já apareceu?
 
 - Pergunta: por que o servo não volta para posição inicial após o primeiro ciclo?
