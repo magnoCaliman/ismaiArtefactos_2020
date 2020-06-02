@@ -1289,7 +1289,7 @@ void loop()
 
 - Pergunta: por que o servo não volta para posição inicial após o primeiro ciclo?
 
-- /Experimento: crie um circuito onde a posição de um servo é controlada por um potenciômetro./
+- /Experimento 7: crie um circuito onde a posição de um servo é controlada por um potenciômetro./
 
 ** Transistor (como controlador analógico)
 - Ex.37 - transistorAnalogico - https://www.tinkercad.com/things/gvHimiPb4Tx 
