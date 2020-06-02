@@ -1247,6 +1247,8 @@ void loop()
 
 ** Bibliotecas externas
 - Diferenças entre tipos de motores: https://www.circuito.io/blog/arduino-motor-guide/
+- Motores servo às vezes também são chamados /stepper motors/.
+  - Símbolo esquemático: https://www.electrical-symbols.com/electric-electronic-symbols/electrical-motor-symbols.htm
 
 Ex.36 - servoMotor - https://www.tinkercad.com/things/bh5c2ZGUYNx 
 #+BEGIN_SRC c
